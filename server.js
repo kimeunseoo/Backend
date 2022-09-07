@@ -264,6 +264,11 @@ app.get('/map/specific/:keyword/:lat/:long/:distance/:category/:spdate', (req, r
 	req, res, next );
 });
 
+app.get('/map/unique/:eid', (req, res, next) => {
+	pageMap.getUnique( req.params.eid, req, res, next );
+});
+
+
 const pageComment = require('./route/comment.js');
 app.get('/comment/get/:eid', (req, res, next) => {
 	pageComment.get( 

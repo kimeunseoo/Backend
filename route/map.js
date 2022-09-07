@@ -28,6 +28,26 @@ exports.get = function ( eid, req, res, next )
 
 }
 
+exports.getUnique = function ( eid, req, res, next )
+{
+    const query = `SELECT * FROM tbl_events WHERE id = '${eid}' LIMIT 1`;
+
+	acc.get( query, function(data) {
+        let json = JSON.parse(data);
+        // *** //
+        const output = {
+            position : {
+                lat : json[0].latitude,
+                lng : json[0].longitude
+            },
+            title : json[0].location
+        };
+        // *** //
+        res.send(output);
+    });
+
+}
+
 exports.getAll = function ( req, res, next )
 {
     const query = `SELECT * FROM tbl_events ORDER BY id`;
