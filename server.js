@@ -10,12 +10,13 @@ const app = express();
 //const svr = express();
 //const app = express.Router();
 app.use(express.json());
+const port = 3004;
 //router.use(express.json());
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Portnummer
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
-const port = 3004;
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * CORS
@@ -282,6 +283,6 @@ app.get('/comment/set/:uid/:eid/:ondate/:comment', (req, res, next) => {
  * Server-Verbindung aufbauen
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
+app.listen(process.env.PORT ?? port, () => {
+	console.log(`Listening on port`);
 });
