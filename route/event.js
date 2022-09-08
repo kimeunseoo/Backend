@@ -17,7 +17,7 @@ exports.new = function ( uid, body, imagename, req, res )
     `VALUES ` +
     `( '${uid}', '${body.category}', '${body.description}', '${body.longitude}', '${body.latitude}', '${body.location}', '${body.date}', '${imagename}', '${body.title}' )`;
 
-    res.send(query);
+    // res.send(query);
 
 	acc.set( query );
 
