@@ -4,8 +4,8 @@
 
 const acc = require("../dbac.js");
 //const geo = require("../geo.js");
-let location = require('location-href')
-location()
+
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Inhalt liefern
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -21,7 +21,9 @@ exports.new = function ( uid, body, imagename, req, res )
 
 	acc.set( query );
 
-    location.set('https://on-point-project.netlify.app')
+    res.writeHead(301, {
+        Location: "https://on-point-project.netlify.app"
+      }).end();
 }
 
 exports.get = function ( uid, req, res )
@@ -32,6 +34,7 @@ exports.get = function ( uid, req, res )
         res.send(json);
     });
 }
+
 
 exports.getJoinedEvents = function ( uid, req, res )
 {
@@ -65,4 +68,12 @@ exports.getEventAvatar = function ( eid, req, res )
 	acc.get( query, function(json) {
         res.send(json);
     });
+}
+
+
+exports.refer = function (req, res){
+    
+    res.writeHead(301, {
+        Location: "https://on-point-project.netlify.app"
+      }).end();
 }

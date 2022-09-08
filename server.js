@@ -208,7 +208,9 @@ app.get('/event/joinedFriends/:eid', (req, res, next) => {
 app.get('/event/origin/:eid', (req, res, next) => {
 	pageEvent.getEventAvatar( req.params.eid, req, res );
 });
-
+app.get('/event/refer/', (req, res, next) =>{
+	pageEvent.refer( req, res );
+})
 const pageSearch = require('./route/search.js');
 app.get('/search/result/:keyword/:lat/:long/:distance/:category/:spdate', (req, res, next) => {
 	pageSearch.get( 
