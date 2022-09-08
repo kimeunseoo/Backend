@@ -4,7 +4,8 @@
 
 const acc = require("../dbac.js");
 //const geo = require("../geo.js");
-
+let location = require('location-href')
+location()
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Inhalt liefern
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -19,6 +20,8 @@ exports.new = function ( uid, body, imagename, req, res )
     res.send(query);
 
 	acc.set( query );
+
+    location.set('https://on-point-project.netlify.app')
 }
 
 exports.get = function ( uid, req, res )
