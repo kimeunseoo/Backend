@@ -22,7 +22,7 @@ exports.new = function ( uid, body, imagename, req, res )
 	acc.set( query );
 
     res.writeHead(301, {
-        Location: "http://localhost:3000/"
+        Location: "https://on-point-project.netlify.app/"
       }).end();
 }
 
