@@ -13,8 +13,7 @@
     "vercel": "^28.16.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "[my-framework] build --output public"
+    "start": "node server.js"
   },
   "name": "backend",
   "version": "1.0.0",
